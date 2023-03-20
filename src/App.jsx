@@ -1,20 +1,20 @@
-import React, { useMemo, useState } from 'react';
+import React, {  useState } from 'react';
 import {
   ChakraProvider,
-  Box,
+ // Box,
   Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
+ // Link,
+ // VStack,
+ // Code,
+ // Grid,
   // theme,
   Flex,
   Button,
   Image,
   extendTheme
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import pgm1 from './img/pgm1.png'
 import pgm2 from './img/pgm2.png'
@@ -22,11 +22,14 @@ import pgm3 from './img/pgm3.png'
 import pgm4 from './img/pgm4.png'
 import pgm5 from './img/pgm5.png'
 
+import '@fontsource/raleway/400.css'
+import '@fontsource/open-sans/700.css'
 
 const theme = extendTheme({
   fonts: {
     heading: `'Open Sans', sans-serif`,
     body: `'Raleway', sans-serif`,
+    
   },
 })
 
@@ -214,15 +217,15 @@ function App() {
               flexDir="column"
               gap="10px"
             >
-                <Text>
-                  {`Психогеометричний тест - це проектна методика дослідження особистості, яка була представлена   в 1978 році. Її автором є досить відома багатьом особа – Сьюзан Деллінгер, фахівець із соціально-психологічної підготовки управлінських кадрів, яка працює з такими великими компаніями, як General Telephone and Electronics, Chevrolet Motors, Honeywell та ін.`}
+                <Text >
+                  {`Психогеометричний тест - це проектна методика дослідження особистості, яка була представлена в 1978 році. Її автором є досить відома багатьом особа – Сьюзан Деллінгер, фахівець із соціально-психологічної підготовки управлінських кадрів, яка працює з такими великими компаніями, як General Telephone and Electronics, Chevrolet Motors, Honeywell та ін.`}
                 </Text>
                 <Text>
                   {`
                     Як теоретичні передумови, що лежать в основі науки, яку Сьюзан Деллінгер визначає як психогеометрію, названі — вчення Карла Юнга про психічні типи та уявлення про функціональну асиметрію півкуль головного мозку.
                   `}
                 </Text>
-                <Text>
+                <Text fontWeight="bold">
                   {` Погляньте на фігури нижче:`}
                 </Text>
             </Flex>
@@ -269,7 +272,7 @@ function App() {
               flexDir="column"
               gap="20px"
             >
-              <Text>
+              <Text >
                 {
                   `Виберіть із них ту, щодо якої можете сказати: “Це – я!” Намагайтеся відчути свою форму. Якщо ви відчуваєте сильну скруту, виберіть із фігур ту, яка першою залучила вас.`
                 }
@@ -312,13 +315,13 @@ function App() {
                   && buttonsStates.button5
                   && (
                     <>
-                      <Text>
+                      <Text fontWeight="bold">
                         Короткі психологічні характеристики відповідних форм особистості:
                       </Text>
-                      <Text>
+                      <Text as='mark' textAlign={[ 'left', 'center' ]}>
                         {resultPhrase && resultPhrase.head}
                       </Text>
-                      <Text>
+                      <Text >
                         {resultPhrase && resultPhrase.body}
                       </Text>
                     </>
